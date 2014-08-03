@@ -1,0 +1,40 @@
+h1, h2, h3, h4, h5, h6, dt {
+	font-weight: normal;
+	color: #793862;
+	border: 0;
+	background: none;
+	padding: 0;
+	  
+	/*font-weight: 500;
+  color:#333;*/
+}
+
+
+h1:after,
+h2:after,
+h3:after {
+  display:table;
+  width:100%;
+  content:" ";
+  margin-top:-1px;
+  border-bottom:1px dotted;
+}
+
+.title h1:after,
+.title h2:after,
+.title h3:after {
+  display:none;
+}
+
+a:link,
+a:visited {
+  color: #369;
+}
+
+a:hover,
+a:focus
+{
+  color: #AE508D; 
+  border-color: #AE508D;
+  outline:0;
+}

@@ -1,0 +1,145 @@
+/* {{{ fullscreen/mainscreen/secondscreen tweaks */
+/* For (responsive) widths, see the Reponsive styles */
+.fullscreen,
+.mainscreen,
+.secondscreen {
+  box-sizing:border-box;
+}
+body section.fullscreen > section.mainscreen {
+  padding:1.5rem 1.5rem 0;
+}
+body section.fullscreen > section.mainscreen:only-child {
+  width:100%;
+}
+.fullscreen > .fullscreen,
+section.mainscreen {
+  background: #fff;
+}
+section a {
+  color: #369;
+  border-bottom: 1px solid;
+  text-decoration: none;
+}
+section.fullscreen .current:before {
+  content: "\bb \20";
+}
+/* }}} */
+
+/* ========= Navi ========= */
+nav {
+  line-height: 3rem;
+}
+nav a.home {
+  margin-right:1.5rem;
+}
+nav img {
+  vertical-align: middle;
+}
+nav ul {
+  display: inline-block;
+  list-style: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+nav li {
+  display: inline-block;
+}
+body header nav a:link,
+body header nav a:visited {
+  display: inline-block;
+  color: #E2E4EF;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+}
+header nav ul a {
+  padding: 0 0.75em;
+}
+nav a:hover {
+  color: #fff;
+}
+nav form {
+  display: inline-block;
+  width: 100%;
+}
+nav input {
+  width: 100%;
+  color: #333 !important;
+  font: normal 1rem/1.5 "Source Sans Pro", Helvetica, Arial, sans-serif !important;
+  text-shadow: 0 1px 0 #ffffff;
+  border: 0;
+  border-radius: 2px;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
+}
+
+/* Footer */
+
+footer {
+   border-top: .25em solid #8892BF;
+   background-color: #333;
+   width: 100%;
+   vertical-align: top;
+   padding: 0.3em;
+}
+
+footer nav {
+  line-height: 3rem;
+}
+
+footer nav img {
+  vertical-align: middle;
+}
+
+footer nav ul {
+  display: inline-block;
+  list-style: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer nav li {
+  display: inline-block;
+}
+
+footer a {
+  color: #eef !important;
+  text-decoration: none;
+  padding: 0 0.75em;
+}
+
+footer a:hover {
+  color: #fff !important;
+}
+
+a:link,
+a:visited {
+  color:#369;
+}
+a:hover,
+a:focus {
+  color:#693;
+}
+h1, h2, h3, h4, h5, h6, dt {
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif !important;
+  font-weight: bolder;
+  color: #333;
+  background: #E2E4EF;
+  border-top: 2px solid #4F5B93;
+  border-bottom: 1px solid #C4C9DF;
+  padding: .375em .5em;
+
+ 
+  border-radius: 0 0 2px 2px;
+  line-height: 1.5rem;
+  margin:0 0 1.5rem;*/
+}
+h1 {
+  font-size: 1.5rem;
+}
+h2 {
+  font-size: 1.25rem;
+}
+h3, dt {
+  font-size: 1.125rem;
+}

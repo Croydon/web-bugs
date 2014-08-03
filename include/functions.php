@@ -1733,32 +1733,37 @@ function response_header($title, $extraHeaders = '')
 	<title><?php echo $siteBig; ?> :: <?php echo $title; ?></title>
 	<link rel="shortcut icon" href="<?php echo $site_method?>://<?php echo $site_url, $basedir; ?>/images/favicon.ico">
 	<!--<link rel="stylesheet" href="http://shared.php.net/styles/defaults.css">-->
+	<link rel="stylesheet" href="<?php echo $site_method?>://<?php echo $site_url, $basedir; ?>/css/unmodshared.css">
 	<link rel="stylesheet" href="<?php echo $site_method?>://<?php echo $site_url, $basedir; ?>/css/style.css">
+	<link rel="stylesheet" href="<?php echo $site_method?>://<?php echo $site_url, $basedir; ?>/css/modshared.css">
 </head>
 
 <body>
-
-<table id="top" class="head" cellspacing="0" cellpadding="0">
+<header class="fullscreen">
+<table id="top" class="head fullscreen" cellspacing="0" cellpadding="0">
 	<tr>
-		<td class="head-logo">
-			<a href="/"><img src="images/logo.gif" alt="Bugs" vspace="2" hspace="2"></a>
-		</td>
+		<!--<td class="head-logo">
+			<a href="/"><img src="images/logo.gif" alt="Bugs"></a>
+		</td>-->
 
 		<td class="head-menu">
-			<a href="http://www.php.net/">php.net</a>&nbsp;|&nbsp;
-			<a href="http://www.php.net/support.php">support</a>&nbsp;|&nbsp;
-			<a href="http://www.php.net/docs.php">documentation</a>&nbsp;|&nbsp;
-			<a href="report.php">report a bug</a>&nbsp;|&nbsp;
-			<a href="search.php">advanced search</a>&nbsp;|&nbsp;
-			<a href="search-howto.php">search howto</a>&nbsp;|&nbsp;
-			<a href="stats.php">statistics</a>&nbsp;|&nbsp;
-			<a href="random">random bug</a>&nbsp;|&nbsp;
+			<nav>
+			<ul>
+			<li class="head-logo"><a href="/"><img src="images/logo.gif" alt="Bugs"></a></li>
+			<li><a href="http://www.php.net/">php.net</a>&nbsp;|&nbsp;</li>
+			<li><a href="http://www.php.net/support.php">support</a>&nbsp;|&nbsp;</li>
+			<li><a href="http://www.php.net/docs.php">documentation</a>&nbsp;|&nbsp;</li>
+			<li><a href="report.php">report a bug</a>&nbsp;|&nbsp;</li>
+			<li><a href="search.php">advanced search</a>&nbsp;|&nbsp;</li>
+			<li><a href="search-howto.php">search howto</a>&nbsp;|&nbsp;</li>
+			<li><a href="stats.php">statistics</a>&nbsp;|&nbsp;</li>
+			<li><a href="random">random bug</a>&nbsp;|&nbsp;</li>
 <?php if ($is_logged) { ?>
-			<a href="search.php?cmd=display&amp;assign=<?php echo $username;?>">my bugs</a>&nbsp;|&nbsp;
-			<a href="logout.php">logout</a>
+			<li><a href="search.php?cmd=display&amp;assign=<?php echo $username;?>">my bugs</a>&nbsp;|&nbsp;</li>
+			<li><a href="logout.php">logout</a></li>
 <?php } else { ?>
-			<a href="login.php">login</a>
-<?php } ?>
+			<li><a href="login.php">login</a></li>
+<?php } ?>  </nav>
 		</td>
 	</tr>
 
@@ -1767,14 +1772,15 @@ function response_header($title, $extraHeaders = '')
 			<form method="get" action="search.php">
 				<p class="head-search">
 					<input type="hidden" name="cmd" value="display">
-					<small>go to bug id or search bugs for</small>
-					<input class="small" type="text" name="search_for" value="<?php print isset($_GET['search_for']) ? htmlspecialchars($_GET['search_for']) : ''; ?>" size="30">
+					<!--<small>go to bug id or search bugs for</small>-->
+					<input class="small" type="text" name="search_for" value="<?php print isset($_GET['search_for']) ? htmlspecialchars($_GET['search_for']) : ''; ?>" size="30" placeholder="go to bug id or search bugs for" >
 					<input type="image" src="images/small_submit_white.gif" alt="search" style="vertical-align: middle;">
 				</p>
 			</form>
 		</td>
 	</tr>
 </table>
+</header>
 
 <table class="middle" cellspacing="0" cellpadding="0">
 	<tr>
