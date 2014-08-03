@@ -1732,6 +1732,7 @@ function response_header($title, $extraHeaders = '')
 	<base href="<?php echo $site_method?>://<?php echo $site_url, $basedir; ?>/">
 	<title><?php echo $siteBig; ?> :: <?php echo $title; ?></title>
 	<link rel="shortcut icon" href="<?php echo $site_method?>://<?php echo $site_url, $basedir; ?>/images/favicon.ico">
+	<!--<link rel="stylesheet" href="http://shared.php.net/styles/defaults.css">-->
 	<link rel="stylesheet" href="<?php echo $site_method?>://<?php echo $site_url, $basedir; ?>/css/style.css">
 </head>
 
@@ -1797,24 +1798,16 @@ function response_footer($extra_html = '')
 
 <?php echo $extra_html; ?>
 
-<table class="foot" cellspacing="0" cellpadding="0">
-	<tr>
-		<td class="foot-bar" colspan="2">&nbsp;</td>
-	</tr>
-
-	<tr>
-		<td class="foot-copy">
-			<small>
-				<a href="http://www.php.net/"><img src="images/logo-small.gif" align="left" valign="middle" hspace="3" alt="PHP"></a>
-				<a href="http://www.php.net/copyright.php">Copyright &copy; 2001-<?php echo date('Y'); ?> The PHP Group</a><br>
-				All rights reserved.
-			</small>
-		</td>
-		<td class="foot-source">
-			<small>Last updated: <?php echo $LAST_UPDATED; ?></small>
-		</td>
-	</tr>
-</table>
+<footer class="foot">
+  <nav class="foot-copy fullscreen">
+    <ul>
+      <li><a href="//php.net/copyright">Copyright © 2001-<?php echo date('Y'); ?> The PHP Group</a></li>
+      <li><a href="//php.net/sites">Other PHP.net sites</a></li>
+      <li><a href="//php.net/privacy">Privacy policy</a></li>
+	  <li ><small class="foot-source">Last updated: <?php echo $LAST_UPDATED; ?></small></li>
+    </ul>
+  </nav>
+</footer>
 </body>
 </html>
 <?php

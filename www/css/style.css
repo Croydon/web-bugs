@@ -4,9 +4,13 @@ body {
 	margin: 0px;
 	padding: 0px;
 	background-color: white;
-	color: black;
+	/*color: black;
 	font-family: verdana, arial, helvetica, sans-serif;
-	font-size: 90%;
+	font-size: 90%;*/
+	
+	color: #333;
+	font: normal 0.9rem/1.5 Tahoma, Arial, sans-serif, serif, monospace;
+	width: 100%;
 }
 
 img {
@@ -14,8 +18,9 @@ img {
 }
 
 table.head,
-table.middle,
-table.foot {
+table.middle 
+/* footer */
+{
 	font-size: 100%; /* make IE look normal */
 	width: 100%;
 	border: 0px;
@@ -121,9 +126,8 @@ li.side_page {
 
 
 /* ========= Footer ========= */
-
-td.foot-bar {
-	color: #000000;
+nav.foot-bar {
+	/*color: #000000;
 	background-color: #5b69a6;
 	border-top: 1px solid #000066;
 	border-bottom: 1px solid #000066;
@@ -131,16 +135,48 @@ td.foot-bar {
 	vertical-align: bottom;
 	padding-right: 0.3em;
 	font-weight: bold;
-	font-size: 75%;
+	font-size: 75%;*/
 }
 
-td.foot-copy {
-	background-color: #CCCCCC;
-	vertical-align: top;
-	padding: 0.3em;
+footer {
+   border-top: .25em solid #8892BF;
+   background-color: #333;
+   width: 100%;
+   vertical-align: top;
+   padding: 0.3em;
 }
 
-td.foot-source {
+footer nav {
+  line-height: 3rem;
+}
+
+footer nav img {
+  vertical-align: middle;
+}
+
+footer nav ul {
+  display: inline-block;
+  list-style: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer nav li {
+  display: inline-block;
+}
+
+footer a {
+  color: #eef !important;
+  text-decoration: none;
+  padding: 0 0.75em;
+}
+
+footer a:hover {
+  color: #fff !important;
+}
+
+nav .foot-source {
 	background-color: #CCCCCC;
 	vertical-align: top;
 	text-align: right;
