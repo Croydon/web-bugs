@@ -223,7 +223,7 @@ display_bug_error($warnings, 'warnings', 'WARNING:');
 			</small>
 		</div>
 		<div class="col-xs-4">
-			<select name="limit"><?php show_limit_options($limit);?></select>
+			<b>Display pro page</b> <select name="limit"><?php show_limit_options($limit);?></select>
 			&nbsp;
 			<select name="order_by"><?php show_order_options($limit);?></select>
 			<br>
@@ -244,9 +244,6 @@ display_bug_error($warnings, 'warnings', 'WARNING:');
 			<select id="status" name="status"><?php show_state_options($status);?></select>
 		</div>
 		<div class="col-xs-4">
-			<input type="hidden" name="cmd" value="display">
-			<label for="submit" accesskey="r">Sea<span class="accesskey">r</span>ch:</label>
-			<input id="submit" type="submit" value="Search">
 		</div>
 	</div>
 	<div class="row">
@@ -259,7 +256,8 @@ display_bug_error($warnings, 'warnings', 'WARNING:');
 			<select id="bug_type" name="bug_type"><?php show_type_options($bug_type, true);?></select>
 		</div>
 		<div class="col-xs-4">
-
+			<input type="hidden" name="cmd" value="display">
+			<button type="submit" class="btn btn-sm btn-primary" accesskey="r">Sea<span class="accesskey">r</span>ch</button>
 		</div>
 	</div>
 	<div class="row">

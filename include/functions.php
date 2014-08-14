@@ -1741,7 +1741,7 @@ function response_header($title, $extraHeaders = '')
 </head>
 
 <body>
-<header> <!-- class="fullscreen" -->
+<header class="fullscreen">
 	<nav class="head-menu">
 	<ul>
 	<li class="head-logo"><a href="/"><img src="images/logo.gif" alt="Bugs"></a></li>
