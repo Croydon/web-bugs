@@ -1296,13 +1296,12 @@ function incoming_details_are_valid($in, $initial = 0, $logged_in = false)
 		$errors[] = 'Please provide a password for this bug report.';
 	}
 
+	require_once "{$ROOT_DIR}/include/php_versions.php";
+		
 	if (isset($in['php_version']) && $in['php_version'] == 'earlier') {
 		$errors[] = 'Please select a valid PHP version. If your PHP version is too old, please upgrade first and see if the problem has not already been fixed.';
 	}
-
-	require_once "{$ROOT_DIR}/include/php_versions.php";
-
-	if (empty($in['php_version']) || ($initial && !in_array($in['php_version'], $versions))) {
+	elseif (empty($in['php_version']) || ($initial && !in_array($in['php_version'], $versions))) {
 		$errors[] = 'Please select a valid PHP version.';
 	}
 
@@ -1769,7 +1768,7 @@ function response_header($title, $extraHeaders = '')
 	</nav>
 </header>
 
-<div class="fullscreen content">
+<div class="fullscreen" id="content">
 <?php
 }
 
