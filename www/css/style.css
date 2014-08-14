@@ -5,23 +5,29 @@
 	font-weight: normal;
 }
 
+.row
+{
+	margin-bottom: 1px;
+}
 
 /* ___________________ */
 
 body {
+    /* attributes moved to bootstrap */
 	/*margin: 0px;
-	padding: 0px;*/
+	padding: 0px;
 	background-color: #F2F2F2;
-	color: #333;
-	/*font: normal 0.9rem/1.5 Tahoma, Arial, sans-serif, serif, monospace;*/
-	width: 100%;
+	color: #333;*/
+	/*font: normal 0.9rem/1.5 Tahoma, Arial, sans-serif, serif, monospace;
+	width: 100%;*/
 }
 
+/*
 img {
 	border:0 none;
 }
 
-/*table.head,
+table.head,
 table.middle 
 footer 
 {
@@ -36,7 +42,7 @@ td.content {
 }*/
 
 #content {
-	padding: 1em 0.5em 0.3em 0.5em;
+	padding: 1em 0.5em;
 }
 
 /* ========= Header ========= */
@@ -135,8 +141,9 @@ li.side_page {
 }
 
 /* ========= Footer ========= */
+/*
 nav.foot-bar {
-	/*color: #000000;
+	color: #000000;
 	background-color: #5b69a6;
 	border-top: 1px solid #000066;
 	border-bottom: 1px solid #000066;
@@ -144,8 +151,8 @@ nav.foot-bar {
 	vertical-align: bottom;
 	padding-right: 0.3em;
 	font-weight: bold;
-	font-size: 75%;*/
-}
+	font-size: 75%;
+}*/
 
 
 nav .foot-source {
@@ -288,19 +295,19 @@ div.tags {
 
 div.errors {
 	border: 1px dashed #660000;
-	background: #fee;
+	/*background: #fee;*/
 	color: #660000;
 }
 
 div.warnings {
 	border: 1px dashed #ff8c00;
-	background: #ffa;
+	/*background: #ffa;*/
 	color: #ff8c00;
 }
 
 div.tags {
 	border: 1px dashed #ff8c00;
-	background: #ffa;
+	/*background: #ffa;*/
 	color: #ff8c00;
 	width: 500px;
 	margin-left : 100px;
@@ -312,8 +319,8 @@ div.explain {
 }
 
 div.success {
-	border: 1px dashed #000066;
-	background-color: #CCFF99;
+	border: 0.5px dashed #000066;
+	/*background-color: #CCFF99;*/
 	color: #000066;
 	padding:10px;
 }

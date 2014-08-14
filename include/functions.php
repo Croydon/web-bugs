@@ -766,11 +766,11 @@ function show_boolean_options($current)
 {
 	$options = array('any', 'all', 'raw');
 	while (list($val, $type) = each($options)) {
-		echo '<input type="radio" name="boolean" value="', $val, '"';
+		echo '<label class="radio-inline"><input type="radio" name="boolean" value="', $val, '"';
 		if ($val === $current) {
 			echo ' checked="checked"';
 		}
-		echo ">$type&nbsp;\n";
+		echo "> ". $type ."</label>"; // &nbsp;\n - line break, is this function only used in the search?
 	}
 }
 
@@ -805,7 +805,13 @@ function display_bug_error($in, $class = 'errors', $head = 'ERROR:')
 		return false;
 	}
 
-	echo "<div class='{$class}'>{$head}<ul>";
+	if($class == "errors") { 
+		$bootstrapClass = "danger";
+	} else {
+		$bootstrapClass = "warning";
+	}
+	
+	echo "<div class='{$class} bg-{$bootstrapClass} text-{$bootstrapClass}'>{$head}<ul>";
 	foreach ($in as $msg) {
 		if (PEAR::isError($msg)) {
 			if (DEVBOX == true) {
@@ -829,7 +835,7 @@ function display_bug_error($in, $class = 'errors', $head = 'ERROR:')
  */
 function display_bug_success($in)
 {
-	echo "<div class='success'>{$in}</div>\n";
+	echo "<div class='success bg-success text-success'>{$in}</div>\n";
 }
 
 /**
@@ -1297,7 +1303,7 @@ function incoming_details_are_valid($in, $initial = 0, $logged_in = false)
 	}
 
 	require_once "{$ROOT_DIR}/include/php_versions.php";
-		
+
 	if (isset($in['php_version']) && $in['php_version'] == 'earlier') {
 		$errors[] = 'Please select a valid PHP version. If your PHP version is too old, please upgrade first and see if the problem has not already been fixed.';
 	}
@@ -1731,9 +1737,9 @@ function response_header($title, $extraHeaders = '')
 	<base href="<?php echo $site_method?>://<?php echo $site_url, $basedir; ?>/">
 	<title><?php echo $siteBig; ?> :: <?php echo $title; ?></title>
 	<link rel="shortcut icon" href="<?php echo $site_method?>://<?php echo $site_url, $basedir; ?>/images/favicon.ico">
-	<!--<link rel="stylesheet" href="http://shared.php.net/styles/defaults.css">-->
 	<link rel="stylesheet" href="<?php echo $site_method?>://<?php echo $site_url, $basedir; ?>/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?php echo $site_method?>://<?php echo $site_url, $basedir; ?>/css/bootstrap-theme.min.css">
+	<!--<link rel="stylesheet" href="http://shared.php.net/styles/defaults.css">-->
 	<link rel="stylesheet" href="<?php echo $site_method?>://<?php echo $site_url, $basedir; ?>/css/unmodshared.css">
 	<link rel="stylesheet" href="<?php echo $site_method?>://<?php echo $site_url, $basedir; ?>/css/style.css">
 	<link rel="stylesheet" href="<?php echo $site_method?>://<?php echo $site_url, $basedir; ?>/css/modshared.css">
@@ -1743,7 +1749,7 @@ function response_header($title, $extraHeaders = '')
 <header class="fullscreen">
 	<nav class="head-menu">
 	<ul>
-	<li class="head-logo"><a href="/"><img src="images/logo.gif" alt="Bugs"></a></li>
+	<li class="head-logo"><a href="<?php echo $site_method?>://<?php echo $site_url, $basedir; ?>/"><img src="images/logo.gif" alt="Bugs"></a></li>
 	<li><a href="http://php.net/">php.net</a>&nbsp;|&nbsp;</li>
 	<li><a href="http://php.net/support.php">support</a>&nbsp;|&nbsp;</li>
 	<li><a href="http://php.net/docs.php">documentation</a>&nbsp;|&nbsp;</li>
@@ -1785,8 +1791,8 @@ function response_footer($extra_html = '')
 
 <?php echo $extra_html; ?>
 
-<footer class="foot fullscreen">
-  <nav class="foot-copy">
+<footer class="fullscreen"> <!-- foot  -->
+  <nav> <!-- class="foot-copy" -->
     <ul>
       <li><a href="http://php.net/copyright">Copyright © 2001-<?php echo date('Y'); ?> The PHP Group</a></li>
       <li><a href="http://php.net/sites">Other PHP.net sites</a></li>

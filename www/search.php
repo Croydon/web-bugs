@@ -213,24 +213,25 @@ display_bug_error($warnings, 'warnings', 'WARNING:');
 			<b>Find bugs</b>
 		</div>
 		<div class="col-xs-3">
-			with all or any of the w<span class="accesskey">o</span>rds
+			<label for="keywords">with all or any of the w<span class="accesskey">o</span>rds</label>
 		</div>
 		<div class="col-xs-4">
-			<input type="text" name="search_for" value="<?php echo htmlspecialchars($search_for, ENT_COMPAT, 'UTF-8'); ?>" size="20" maxlength="255" accesskey="o"><br>
+			<input type="text" id="keywords" name="search_for" class="form-control input-sm" value="<?php echo htmlspecialchars($search_for, ENT_COMPAT, 'UTF-8'); ?>" size="20" maxlength="255" accesskey="o">
 			<small>
 				<?php show_boolean_options($boolean_search) ?>
 				(<a href="search-howto.php" target="_new">?</a>)
 			</small>
 		</div>
 		<div class="col-xs-4">
-			<b>Display pro page</b> <select name="limit"><?php show_limit_options($limit);?></select>
-			&nbsp;
-			<select name="order_by"><?php show_order_options($limit);?></select>
-			<br>
+			<div class="form-inline">
+				<label for="limit"><b>Display pro page</b></label> <select id="limit" name="limit" class="form-control input-sm"><?php show_limit_options($limit);?></select>
+				&nbsp;
+				<select name="order_by" class="form-control input-sm"><?php show_order_options($limit);?></select>
+			</div>
 			<small>
-			<input type="radio" name="direction" value="ASC" <?php if($direction != "DESC") { echo('checked="checked"'); }?>>Ascending
-			&nbsp;
-			<input type="radio" name="direction" value="DESC" <?php if($direction == "DESC") { echo('checked="checked"'); }?>>Descending
+				<label class="radio-inline"><input type="radio" name="direction" value="ASC" <?php if($direction != "DESC") { echo('checked="checked"'); }?>> Ascending </label>
+
+				<label class="radio-inline"><input type="radio" name="direction" value="DESC" <?php if($direction == "DESC") { echo('checked="checked"'); }?>> Descending </label>
 			</small>
 		</div>
 	</div>
@@ -241,7 +242,7 @@ display_bug_error($warnings, 'warnings', 'WARNING:');
 			<label for="status" accesskey="n">Retur<span class="accesskey">n</span> bugs with <b>status</b></label>
 		</div>
 		<div class="col-xs-4">
-			<select id="status" name="status"><?php show_state_options($status);?></select>
+			<select id="status" name="status" class="form-control input-sm"><?php show_state_options($status);?></select>
 		</div>
 		<div class="col-xs-4">
 		</div>
@@ -253,21 +254,21 @@ display_bug_error($warnings, 'warnings', 'WARNING:');
 			<label for="bug_type"> with <b>type</b></label>
 		</div>
 		<div class="col-xs-4">
-			<select id="bug_type" name="bug_type"><?php show_type_options($bug_type, true);?></select>
+			<select id="bug_type" name="bug_type" class="form-control input-sm"><?php show_type_options($bug_type, true);?></select>
 		</div>
 		<div class="col-xs-4">
 			<input type="hidden" name="cmd" value="display">
-			<button type="submit" class="btn btn-sm btn-primary" accesskey="r">Sea<span class="accesskey">r</span>ch</button>
+			<button type="submit" class="btn btn-primary btn-sm" accesskey="r">Sea<span class="accesskey">r</span>ch</button>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-xs-1">
 		</div>
 		<div class="col-xs-3">
-			<label for="bug_type"> with <b>project</b></label>
+			<label for="project"> with <b>project</b></label>
 		</div>
 		<div class="col-xs-4">
-			<select id="project" name="project"><?php show_project_options($project, true);?></select>
+			<select id="project" name="project" class="form-control input-sm"><?php show_project_options($project, true);?></select>
 		</div>
 		<div class="col-xs-4">
 		</div>
@@ -279,7 +280,7 @@ display_bug_error($warnings, 'warnings', 'WARNING:');
 			<label for="category" accesskey="c">for these <b>pa<span class="accesskey">c</span>kages</b></label>
 		</div>
 		<div class="col-xs-4">
-			<select id="category" name="package_name[]" multiple="multiple" size="6"><?php show_package_options($package_name, 2);?></select>
+			<select id="category" name="package_name[]" class="form-control input-sm" multiple="multiple" size="6"><?php show_package_options($package_name, 2);?></select>
 		</div>
 		<div class="col-xs-4">
 		</div>
@@ -288,23 +289,10 @@ display_bug_error($warnings, 'warnings', 'WARNING:');
 		<div class="col-xs-1">
 		</div>
 		<div class="col-xs-3">
-			<b>NOT</b> for these <b>packages</b>
+			<label for="exclude_categorys"><b>NOT</b> for these <b>packages</b></label>
 		</div>
 		<div class="col-xs-4">
-			<select name="package_nname[]" multiple="multiple" size="6"><?php show_package_options($package_nname, 2);?></select>
-		</div>
-		<div class="col-xs-4">
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-xs-1">
-		</div>
-		<div class="col-xs-3">
-			with <b>operating system</b>
-		</div>
-		<div class="col-xs-4">
-			<input type="text" name="php_os" value="<?php echo htmlspecialchars($php_os, ENT_COMPAT, 'UTF-8'); ?>">
-			<input style="vertical-align:middle;" type="checkbox" name="php_os_not" value="1" <?php echo ($php_os_not == 'not') ? 'checked="checked"' : ''; ?>> NOT
+			<select id="exclude_categorys" name="package_nname[]" class="form-control input-sm" multiple="multiple" size="6"><?php show_package_options($package_nname, 2);?></select>
 		</div>
 		<div class="col-xs-4">
 		</div>
@@ -313,23 +301,11 @@ display_bug_error($warnings, 'warnings', 'WARNING:');
 		<div class="col-xs-1">
 		</div>
 		<div class="col-xs-3">
-			reported with <b>PHP version</b>
+			<label for="php_os">with <b>operating system</b></label>
 		</div>
-		<div class="col-xs-4">
-			<input type="text" name="phpver" value="<?php echo htmlspecialchars($phpver, ENT_COMPAT, 'UTF-8'); ?>">
-		</div>
-		<div class="col-xs-4">
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-xs-1">
-		</div>
-		<div class="col-xs-3">
-			reported with <b>CVE-ID</b>
-		</div>
-		<div class="col-xs-4">
-			<input type="text" name="cve_id" value="<?php echo htmlspecialchars($cve_id, ENT_COMPAT, 'UTF-8'); ?>">
-			<input style="vertical-align:middle;" type="checkbox" name="cve_id_not" value="1" <?php echo ($cve_id_not == 'not') ? 'checked="checked"' : ''; ?>> NOT
+		<div class="col-xs-4 form-inline">
+			<input type="text" id="php_os" name="php_os" class="form-control input-sm" value="<?php echo htmlspecialchars($php_os, ENT_COMPAT, 'UTF-8'); ?>">
+			<div class="checkbox"><label><input type="checkbox" name="php_os_not" value="1" <?php echo ($php_os_not == 'not') ? 'checked="checked"' : ''; ?>> NOT</label></div>
 		</div>
 		<div class="col-xs-4">
 		</div>
@@ -338,10 +314,35 @@ display_bug_error($warnings, 'warnings', 'WARNING:');
 		<div class="col-xs-1">
 		</div>
 		<div class="col-xs-3">
-			<b>assigned</b> to
+			<label for="phpver">reported with <b>PHP version</b></label>
 		</div>
 		<div class="col-xs-4">
-			<input type="text" name="assign" value="<?php echo htmlspecialchars($assign, ENT_COMPAT, 'UTF-8'); ?>">
+			<input type="text" id="phpver" name="phpver" class="form-control input-sm" value="<?php echo htmlspecialchars($phpver, ENT_COMPAT, 'UTF-8'); ?>">
+		</div>
+		<div class="col-xs-4">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-1">
+		</div>
+		<div class="col-xs-3">
+			<label for="cve_id">reported with <b>CVE-ID</b></label>
+		</div>
+		<div class="col-xs-4 form-inline">
+			<input type="text" id="cve_id" name="cve_id" class="form-control input-sm" value="<?php echo htmlspecialchars($cve_id, ENT_COMPAT, 'UTF-8'); ?>">
+			<div class="checkbox"><label><input type="checkbox" name="cve_id_not" value="1" <?php echo ($cve_id_not == 'not') ? 'checked="checked"' : ''; ?>> NOT</label></div>
+		</div>
+		<div class="col-xs-4">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-1">
+		</div>
+		<div class="col-xs-3">
+			<label for="assign"><b>assigned</b> to</label>
+		</div>
+		<div class="col-xs-4">
+			<input type="text" id="assign" name="assign" class="form-control input-sm" value="<?php echo htmlspecialchars($assign, ENT_COMPAT, 'UTF-8'); ?>">
 			<?php
 				if (!empty($auth_user->handle)) {
 					$u = htmlspecialchars($auth_user->handle);
@@ -356,10 +357,10 @@ display_bug_error($warnings, 'warnings', 'WARNING:');
 		<div class="col-xs-1">
 		</div>
 		<div class="col-xs-3">
-			with <b>author e<span class="accesskey">m</span>ail</b>
+			<label for="author_email">with <b>author e<span class="accesskey">m</span>ail</b></label>
 		</div>
 		<div class="col-xs-4">
-			<input accesskey="m" type="text" name="author_email" value="<?php echo htmlspecialchars($author_email, ENT_COMPAT, 'UTF-8'); ?>">
+			<input accesskey="m" type="text" id="author_email" name="author_email" class="form-control input-sm" value="<?php echo htmlspecialchars($author_email, ENT_COMPAT, 'UTF-8'); ?>">
 			<?php
 				if (!empty($auth_user->handle)) {
 					$u = htmlspecialchars($auth_user->handle);
@@ -374,22 +375,10 @@ display_bug_error($warnings, 'warnings', 'WARNING:');
 		<div class="col-xs-1">
 		</div>
 		<div class="col-xs-3">
-			submitted
+			<label for="bug_age"><b>submitted</b></label>
 		</div>
 		<div class="col-xs-4">
-			<select name="bug_age"><?php show_byage_options($bug_age);?></select>
-		</div>
-		<div class="col-xs-4">
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-xs-1">
-		</div>
-		<div class="col-xs-3">
-			updated
-		</div>
-		<div class="col-xs-4">
-			<select name="bug_updated"><?php show_byage_options($bug_updated);?></select>
+			<select id="bug_age" name="bug_age" class="form-control input-sm"><?php show_byage_options($bug_age);?></select>
 		</div>
 		<div class="col-xs-4">
 		</div>
@@ -398,10 +387,10 @@ display_bug_error($warnings, 'warnings', 'WARNING:');
 		<div class="col-xs-1">
 		</div>
 		<div class="col-xs-3">
-			only with <b>patch attached</b>
+			<label for="bug_updated"><b>updated</b></label>
 		</div>
 		<div class="col-xs-4">
-			<input type="checkbox" name="patch" value="Y" <?php echo $patch == 'Y' ? " checked" : "" ?>>
+			<select id="bug_updated" name="bug_updated" class="form-control input-sm"><?php show_byage_options($bug_updated);?></select>
 		</div>
 		<div class="col-xs-4">
 		</div>
@@ -410,11 +399,23 @@ display_bug_error($warnings, 'warnings', 'WARNING:');
 		<div class="col-xs-1">
 		</div>
 		<div class="col-xs-3">
-			only with a <b>pull request</b>
+			<label for="patch">only with a <b>patch attached</b>
 		</div>
 		<div class="col-xs-4">
-			<input type="checkbox" name="pull" value="Y" <?php echo $pull == 'Y' ? " checked" : "" ?>>
+			<input type="checkbox" id="patch" name="patch" value="Y" <?php echo $patch == 'Y' ? " checked" : "" ?>></label>
 		</div>
+		<div class="col-xs-4">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-1">
+		</div>
+		<div class="col-xs-3">
+			<label>only with a <b>pull request</b>
+		</div>
+		<div class="col-xs-4">
+			<input type="checkbox" id="pull" name="pull" value="Y" <?php echo $pull == 'Y' ? " checked" : "" ?>></label>
+		</div> 
 		<div class="col-xs-4">
 		</div>
 	</div>
@@ -424,10 +425,10 @@ display_bug_error($warnings, 'warnings', 'WARNING:');
 		<div class="col-xs-1">
 		</div>
 		<div class="col-xs-3">
-			only marked as <b>private</b>
+			<label for="private">only marked as <b>private</b>
 		</div>
 		<div class="col-xs-4">
-			<input type="checkbox" name="private" value="Y" <?php echo $private == 'Y' ? " checked" : "" ?>>
+			<input type="checkbox" id="private" name="private" value="Y" <?php echo $private == 'Y' ? " checked" : "" ?>></label>
 		</div>
 		<div class="col-xs-4">
 		</div>
