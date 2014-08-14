@@ -1,6 +1,5 @@
 local_config.php
 www/Text/
-www/Tree/
 
 # for testing purpose
 include/php_versions.php
