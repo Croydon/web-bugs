@@ -485,8 +485,8 @@ function txfield($n, $bug = null, $in = null)
 function show_byage_options($current)
 {
 	$opts = array(
-		'0' => 'the beginning',
-		'1'	=> 'yesterday',
+		'0' => 'since the beginning',
+		'1'	=> 'since yesterday',
 		'7'	=> '7 days ago',
 		'15' => '15 days ago',
 		'30' => '30 days ago',
@@ -1733,6 +1733,8 @@ function response_header($title, $extraHeaders = '')
 	<title><?php echo $siteBig; ?> :: <?php echo $title; ?></title>
 	<link rel="shortcut icon" href="<?php echo $site_method?>://<?php echo $site_url, $basedir; ?>/images/favicon.ico">
 	<!--<link rel="stylesheet" href="http://shared.php.net/styles/defaults.css">-->
+	<link rel="stylesheet" href="<?php echo $site_method?>://<?php echo $site_url, $basedir; ?>/css/bootstrap.min.css">
+	<link rel="stylesheet" href="<?php echo $site_method?>://<?php echo $site_url, $basedir; ?>/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="<?php echo $site_method?>://<?php echo $site_url, $basedir; ?>/css/unmodshared.css">
 	<link rel="stylesheet" href="<?php echo $site_method?>://<?php echo $site_url, $basedir; ?>/css/style.css">
 	<link rel="stylesheet" href="<?php echo $site_method?>://<?php echo $site_url, $basedir; ?>/css/modshared.css">
