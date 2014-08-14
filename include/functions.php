@@ -1769,25 +1769,20 @@ function response_header($title, $extraHeaders = '')
 	</nav>
 </header>
 
-<table class="middle" cellspacing="0" cellpadding="0">
-	<tr>
-		<td class="content">
+<div class="fullscreen content">
 <?php
 }
 
-
 function response_footer($extra_html = '')
 {
-	global $_footer_done, $LAST_UPDATED, $basedir;
+	global $_footer_done, $LAST_UPDATED;
 
 	if ($_footer_done) {
 		return;
 	}
 	$_footer_done = true;
 ?>
-		</td>
-	</tr>
-</table>
+</div>
 
 <?php echo $extra_html; ?>
 

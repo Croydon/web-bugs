@@ -21,11 +21,10 @@ img {
 	border:0 none;
 }
 
-table.head,
+/*table.head,
 table.middle 
-/* footer */
+footer 
 {
-	font-size: 100%; /* make IE look normal */
 	width: 100%;
 	border: 0px;
 }
@@ -34,7 +33,7 @@ td.content {
 	width: 100%;
 	vertical-align: top;
 	padding: 1em 0.5em 0.3em 0.5em;
-}
+}*/
 
 
 /* ========= Header ========= */
@@ -514,13 +513,11 @@ div.clear {
 	clear:both;
 }
 
+/*
 td.content {
-	font-size: 1em;
-}
+	font-size: 1em; okay?
+}*/
 
-td.content table {
-	font-size: 100%; /* make IE look normal */
-}
 
 .headertop {
 	background: #5b69a6;
