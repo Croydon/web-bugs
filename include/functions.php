@@ -1709,7 +1709,7 @@ function bugs_mail($to, $subject, $message, $headers = '', $params = '')
  */
 function response_header($title, $extraHeaders = '')
 {
-	global $_header_done, $self, $auth_user, $logged_in, $siteBig, $site_method, $site_url, $basedir;
+	global $_header_done, $auth_user, $logged_in, $siteBig, $site_method, $site_url, $basedir;
 
 	$is_logged = false;
 
