@@ -38,3 +38,7 @@ a:focus
   border-color: #AE508D;
   outline:0;
 }
+
+header nav ul a {
+	padding: 0px 2.5px;
+}

@@ -1,11 +1,19 @@
 /* $Id$ */
 
+#advanced-search label 
+{
+	font-weight: normal;
+}
+
+
+/* ___________________ */
+
 body {
-	margin: 0px;
-	padding: 0px;
+	/*margin: 0px;
+	padding: 0px;*/
 	background-color: #F2F2F2;
 	color: #333;
-	font: normal 0.9rem/1.5 Tahoma, Arial, sans-serif, serif, monospace;
+	/*font: normal 0.9rem/1.5 Tahoma, Arial, sans-serif, serif, monospace;*/
 	width: 100%;
 }
 
@@ -685,11 +693,13 @@ form#asearch th {
 	font-weight: bold;
 }
 
+/*
 form#asearch table#primary {
-	font-size: 100%; /* make IE look normal */
+
 	background: #eee;
 	padding: 4px;
-}
+}*/
+
 table#votes {
 	background-color:#eee;
 	margin:0 0 0 50px;
