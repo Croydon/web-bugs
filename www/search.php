@@ -239,7 +239,7 @@ display_bug_error($warnings, 'warnings', 'WARNING:');
 		<div class="col-xs-1">
 		</div>
 		<div class="col-xs-3">
-			<label for="status" accesskey="n">Retur<span class="accesskey">n</span> bugs with <b>status</b></label>
+			<label for="status" accesskey="s">with <b><span class="accesskey">s</span>tatus</b></label>
 		</div>
 		<div class="col-xs-4">
 			<select id="status" name="status" class="form-control input-sm"><?php show_state_options($status);?></select>
