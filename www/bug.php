@@ -766,7 +766,7 @@ if ($edit == 1 || $edit == 2) { ?>
 
 <?php if ($edit == 2) {
 		if ($show_bug_info) { ?>
-                        <div class="explain">
+                        <div class="explain bg-info text-info">
                                 <table>
                                         <tr>
                                                 <td class="details">Passw<span class="accesskey">o</span>rd:</td>
@@ -778,7 +778,7 @@ if ($edit == 1 || $edit == 2) { ?>
                                 </table>
                         </div>
 <?php	} else { ?>
-			<div class="explain">
+			<div class="explain bg-info text-info">
 			<?php if (!isset($_POST['in'])) { ?>
 				Welcome back! If you're the original bug submitter, here's
 				where you can edit the bug or add additional notes.
@@ -802,12 +802,12 @@ if ($edit == 1 || $edit == 2) { ?>
 	} else {
 		if ($logged_in == 'developer') {
 ?>
-				<div class="explain">
+				<div class="explain bg-info text-info">
 					Welcome back, <?php echo $user; ?>! (Not <?php echo $user; ?>?
 					<a href="logout.php">Log out.</a>)
 				</div>
 <?php	} else { ?>
-			<div class="explain">
+			<div class="explain bg-info text-info">
 				Welcome! If you don't have a Git account, you can't do anything here.<br>
 				You can <a href="bug.php?id=<?php echo $bug_id; ?>&amp;edit=3">add a comment by following this link</a>
 				or if you reported this bug, you can <a href="bug.php?id=<?php echo $bug_id; ?>&amp;edit=2">edit this bug over here</a>.
@@ -968,7 +968,7 @@ if ($edit == 1 || $edit == 2) { ?>
 	<form name="comment" id="comment" action="bug.php" method="post">
 
 <?php if ($logged_in) { ?>
-	<div class="explain">
+	<div class="explain bg-info text-info">
 		<h1>
 			<a href="patch-add.php?bug_id=<?php echo $bug_id; ?>">Click Here to Submit a Patch</a>
 			<input type="submit" name="subscribe_to_bug" value="Subscribe">
@@ -979,7 +979,7 @@ if ($edit == 1 || $edit == 2) { ?>
 
 <?php if (!isset($_POST['in'])) { ?>
 
-		<div class="explain">
+		<div class="explain bg-info text-info">
 			Anyone can comment on a bug. Have a simpler test case? Does it
 			work for you on a different platform? Let us know!<br>
 			Just going to say 'Me too!'? Don't clutter the database with that please

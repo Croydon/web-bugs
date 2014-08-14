@@ -294,15 +294,15 @@ div.tags {
 }
 
 div.errors {
-	border: 1px dashed #660000;
-	/*background: #fee;*/
-	color: #660000;
+	/*border: 1px dashed #660000;
+	background: #fee;
+	color: #660000;*/
 }
 
 div.warnings {
-	border: 1px dashed #ff8c00;
-	/*background: #ffa;*/
-	color: #ff8c00;
+	/*border: 1px dashed #ff8c00;
+	background: #ffa;
+	color: #ff8c00;*/
 }
 
 div.tags {
@@ -313,15 +313,16 @@ div.tags {
 	margin-left : 100px;
 }
 
+/*
 div.explain {
 	border: 1px dashed #000066;
 	color: #000066;
-}
+}*/
 
 div.success {
-	border: 0.5px dashed #000066;
-	/*background-color: #CCFF99;*/
-	color: #000066;
+	/*border: 0.5px dashed #000066;
+	background-color: #CCFF99;
+	color: #000066;*/
 	padding:10px;
 }
 
