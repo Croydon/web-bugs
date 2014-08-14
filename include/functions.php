@@ -1749,7 +1749,7 @@ function response_header($title, $extraHeaders = '')
 <header class="fullscreen">
 	<nav class="head-menu">
 	<ul>
-	<li class="head-logo"><a href="<?php echo $site_method?>://<?php echo $site_url, $basedir; ?>/"><img src="images/logo.gif" alt="Bugs"></a></li>
+	<li class="head-logo"><a href="<?php echo $site_method?>://<?php echo $site_url, $basedir; ?>/"><img src="images/logo.gif" alt="Bugs" class="img-responsive"></a></li>
 	<li><a href="http://php.net/">php.net</a>&nbsp;|&nbsp;</li>
 	<li><a href="http://php.net/support.php">support</a>&nbsp;|&nbsp;</li>
 	<li><a href="http://php.net/docs.php">documentation</a>&nbsp;|&nbsp;</li>

@@ -293,6 +293,14 @@ div.tags {
 	font-weight: bold;
 }
 
+div.errors a,
+div.warnings a,
+div.explain a,
+div.success a,
+div.tags a {
+	text-decoration: underline;
+}
+
 div.errors {
 	/*border: 1px dashed #660000;
 	background: #fee;
