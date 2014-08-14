@@ -11,7 +11,6 @@ require_once '../include/prepend.php';
 $id = !empty($_GET['id']) ? (int) $_GET['id'] : 0;
 if ($id) {
 	redirect("bug.php?id={$id}");
-	exit;
 }
 
 if($_SERVER['REQUEST_URI'] == '/random') {
@@ -20,7 +19,6 @@ if($_SERVER['REQUEST_URI'] == '/random') {
 	$result = $dbh->prepare($query)->execute();
 	$id = $result->fetchRow();
 	redirect("bug.php?id={$id[0]}");
-	exit;
 }
 
 response_header('Bugs');
@@ -94,7 +92,6 @@ to a random open bug.</p>
 	$searches = array(
 		'Most recent open bugs (all)' => '&bug_type=All',
 		'Most recent open bugs (all) with patch or pull request' => '&bug_type=All&patch=Y&pull=Y',
-		'Most recent open bugs (PHP 5.3)' => '&bug_type=All&phpver=5.3',
 		'Most recent open bugs (PHP 5.4)' => '&bug_type=All&phpver=5.4',
 		'Most recent open bugs (PHP 5.5)' => '&bug_type=All&phpver=5.5',
 		'Most recent open bugs (PHP 5.6)' => '&bug_type=All&phpver=5.6',
