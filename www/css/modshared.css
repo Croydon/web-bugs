@@ -42,3 +42,7 @@ a:focus
 header nav ul a {
 	padding: 0px 2.5px;
 }
+
+footer a {
+	text-decoration: none !important;
+}
