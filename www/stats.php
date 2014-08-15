@@ -83,18 +83,13 @@ if ($total > 0) {
 }
 ?>
 
-<form method="get" action="stats.php">
-	<table>
-		<tr>
-			<td style="white-space: nowrap">
-				<strong>Bug Type:</strong>
-				<select class="small" id="bug_type" name="bug_type" onchange="this.form.submit(); return false;">
-					<?php show_type_options($bug_type, true) ?>
-				</select>
-				<input class="small" type="submit" name="submitStats" value="Search">
-			</td>
-		</tr>
-	</table>
+<form method="get" action="stats.php" class="form-inline">
+	<label for="bug_type"><strong>Bug Type:</strong></label>
+	<select id="bug_type" name="bug_type" class="form-control input-sm" onchange="this.form.submit(); return false;">
+	<!-- class="small"  -->
+		<?php show_type_options($bug_type, true) ?>
+	</select>
+	<button type="submit" name="submitStats" class="btn btn-primary btn-sm">Search</button>  <!-- class="small"  -->
 </form>
 
 <table style="width: 100%; margin-top: 1em;">
@@ -163,8 +158,7 @@ while ($row = $result->fetchRow(MDB2_FETCHMODE_ASSOC)) {
 		if ($last_date !== null) {
 			echo "</table>\n\n";
 		}
-		echo "<table style='float:left; margin-right:20px'>\n".
-		     "<tr><th colspan='2' class='bug_header'>{$row["d"]}</th></tr>\n";
+		echo "<table style='float:left; margin-right:20px;'>\n <tr><th colspan='2' class='bug_header'>{$row["d"]}</th></tr>\n"; // 
 		$last_date = $row['d'];
 	}
 	$version = htmlentities($row["formatted_version"], ENT_QUOTES, 'UTF-8');
